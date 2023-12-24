@@ -50,13 +50,13 @@ const handleClick = () => {
 					<div style={{ height: '7.5vh' }}>
 						<Navbar handleClick={handleClick} />
 					</div>
-					<div className='flex w-full' style={{ height: '92.5vh' }}>
-						<div className='flex gap-y-10 gap-x-5 p-7 mx-20 mr-0 w-full overflow-auto'>
-							<div style={{ maxWidth: '800px' }}>
-								<div>
+					<div className='flex xl:w-full' style={{ height: '92.5vh' }}>
+						<div className='flex flex-col xl:flex-row gap-y-10 gap-x-5 p-7  mr-0 w-full overflow-auto'>
+
+							<div className='w-full' style={{ maxWidth: '800px' }}>
+								<div className=''>
 									<iframe
-										width='800'
-										height='502'
+									 className='relative top-0 left-0 bottom-0 right-0 w-full h-[350px]'
 										src={`https://www.youtube.com/embed/${id}?autoplay=1`}
 										title='YouTube video player'
 										frameBorder='0'
@@ -65,14 +65,16 @@ const handleClick = () => {
 									></iframe>
 									<div className='mt-5'>
 										<p className='text-xl'>{currentPlaying.videoTitle}</p>
-										<div className='flex justify-between mt-1'>
+										<div className='flex flex-col md:justify-between  mt-1'>
+
 											<div className='text-sm text-gray-400'>
 												<span className="after:content-['•'] after:mx-1">
 													{currentPlaying.videoViews} views
 												</span>
 												<span> {currentPlaying.videoAge} ago</span>
 											</div>
-											<div className='flex items-center gap-4 uppercase'>
+
+											<div className='flex items-center flex-wrap gap-4 uppercase'>
 												<div className='flex items-center gap-1 cursor-pointer'>
 													<BiLike className='text-xl' />
 													<strong>{currentPlaying.videoLikes}</strong>
@@ -97,6 +99,7 @@ const handleClick = () => {
 													<BsThreeDots className='text-xl' />
 												</div>
 											</div>
+
 										</div>
 										<div className='flex gap-4 flex-col border-solid border-gray-400 border-2 my-5 pb-3 border-l-transparent border-r-transparent'>
 											<div className='flex items-center gap-5 mr-5 mt-4'>
@@ -147,12 +150,15 @@ const handleClick = () => {
 									</div>
 								</div>
 							</div>
+
 							<div className='mr-24 flex flex-col gap-3'>
+
 								{getRecommendedVideos.length &&
 									recommendedVideos.map((item) => {
 										return <WatchCard data={item} key={item.videoId} />
 									})}
 							</div>
+
 						</div>
 					</div>
 				</div>
