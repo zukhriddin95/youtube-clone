@@ -34,6 +34,8 @@ const YoutubeSlice = createSlice({
 			state.videos = action.payload.parsedData
 			state.nextPageToken = action.payload.nextPageToken
 		})
+		
+		
 		builder.addCase(getSearchPageVideos.fulfilled,(state,action) => {
 			state.videos = action.payload.parsedData
 			state.nextPageToken = action.payload.nextPageToken

@@ -120,3 +120,5 @@ export const NavNameLinks = [
 
 
   export const LIMIT = 20
+
+  export const CART = 'commits'
